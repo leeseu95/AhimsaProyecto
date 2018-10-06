@@ -39,17 +39,6 @@ class Blog extends React.Component {
         });
     }
 
-    // writeUserData(e) {
-    //     e.preventDefault();
-    //     const db = firebase.firestore();
-    //     const that = this;
-    //     const posts = [];
-    //     const commentUser = e.target.elements.comment.value;
-    //     firebase.firestore()
-    //     .collection('comments')
-    //     .doc("new-comments-id")
-    //     .add({text: commentUser, time: Date.now(), username: firebase.auth().currentUser.email})
-    // }
 
     writeUserData(e) {
         e.preventDefault();
@@ -69,27 +58,16 @@ class Blog extends React.Component {
             console.error("Error adding document: ", error);
         });
         
-        // const comment = {
-        //     text: commentUser,
-        //     time: Date.now(),
-        //     username: firebase.auth().currentUser.email
-        // }
-
-        // this.setState({comments: this.state.comments.push(comment)});
     }
 
     renderBottomComments() {
         return this.state.comments.map(comment => {
             return (
-                <div className="wrapper row3">
-                    <main className="clear"></main>
-                    <div id="info">
-                        <div className="square center article">
-                            <br />
-                            <p>{comment.text} - {comment.username}</p>
-                        </div>
-                    </div>
-                </div>
+                <div className="right">
+                    <ul>
+                    <li className="comcont"><p>{comment.text} - {comment.username}</p></li>
+                    </ul>
+                </div>    
             );
         })
     }
@@ -107,8 +85,6 @@ class Blog extends React.Component {
     renderposts() {
         return this.state.posts.map(post => {
             return (
-                <div className="wrapper row3">
-                    <main className="clear"></main>
                     <div id="info">
                         <div className="square center article">
                             <h3 id="titulo" value="0">{post.title}</h3>
@@ -117,7 +93,6 @@ class Blog extends React.Component {
                             {this.rendercomments(post.comments)}
                         </div>
                     </div>
-                </div>
             );
         })
     }
@@ -129,21 +104,24 @@ class Blog extends React.Component {
                 <div className="wrapper row3">
                     <main className="clear"></main>
                     <div id="info">
-                        <h4 className="uppercase btmspace-50">BLOG</h4>
+                        <h4 className="uppercase btmspace-20">BLOG</h4>
                         {this.renderposts()}
                     </div>
                 </div>
-                <div className="wrapper row3">
                     <main className="clear"></main>
+                    <div className="wrapper row3">
                     <div id="info">
-                        <h4 className="uppercase btmspace-50">COMMENTS</h4>
+                        <h2 className="uppercase btmspace-50">COMMENTS</h2>
+                        <div id="comments">
                         {this.renderBottomComments()}
                         <form onSubmit={this.writeUserData}>
                             <input type="text" name="comment"></input>
-                            <button id="button2">Agregar comentario</button>
+                            <br />
+                            <button className="btn uppercase">Agregar comentario</button>
                         </form>
+                        </div>
+                        </div>
                     </div>
-                </div>
                 <div className="wrapper row2">
                     <div id="intro" className="clear">
                     </div>

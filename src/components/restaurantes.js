@@ -24,6 +24,7 @@ class Restaurantes extends React.Component {
         const db = firebase.firestore();
         const that = this;
         const restaurantes = [];
+        const comentarios = [];
         db.collection("restaurantes").where("nombre", "==", selectedOption.label)
         .get()
         .then(function(querySnapshot) {
@@ -33,7 +34,17 @@ class Restaurantes extends React.Component {
                     lat: doc.data().xCoord,
                     long: doc.data().yCoord
                 })
+                document.querySelector("#nombre").innerText=  doc.data().nombre;
                 document.querySelector("#descripcion").innerText=  doc.data().descripcion;
+                document.querySelector("#rating").innerText= "Calificación de usuarios: " + doc.data().rating;
+                document.querySelector("#price").innerText= "Precio :" + doc.data().price;
+               console.log(doc.data().comments.length) 
+                //for (let i = 0; i < doc.data().comments.length; i++){
+                    //comentarios.push(doc.data().comments[i].text)
+                    document.querySelector("#comments0").innerText= doc.data().comments[0].text
+                    document.querySelector("#comments1").innerText= doc.data().comments[1].text
+
+                //}
             });
         })
         .catch(function(error) {
@@ -62,7 +73,11 @@ class Restaurantes extends React.Component {
                                     ]}
                                 />
                             </div>
+                            <p id="nombre"></p>
                             <p id="descripcion"></p> 
+                            <p id="rating"></p>
+                            <p id="price"></p>
+                            <p >Ubicación</p>
                             <div id="map" style={{ height: '70vh', width: '100%' }}>
                                 <GoogleMapReact
                                 bootstrapURLKeys={{ key: "AIzaSyBh_Ka7CGnnWUgcruT4E97086HfSM-X8sc" }}
@@ -75,6 +90,9 @@ class Restaurantes extends React.Component {
                                 </GoogleMapReact>
                                 
                             </div>
+                            <p>Comentarios:</p>
+                            <li id="comments0"></li>
+                            <li id="comments1"></li>
                             </div>
                         </div>
                         <div className="clear"></div>

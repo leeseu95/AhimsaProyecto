@@ -10,6 +10,12 @@ File: Layout CSS
 
 @import url("framework.css");
 
+.navbar.navbar-1 .navbar-toggler-icon {
+  background-image: url('https://mdbootstrap.com/img/svg/hamburger6.svg?color=000');
+}
+              
+ 
+
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */
 .row1{border-top:5px solid;}
@@ -109,7 +115,7 @@ File: Layout CSS
 
 /* Comments */
 #comments ul{margin:0 0 40px 0; padding:0; list-style:none;}
-#comments li{margin:0 0 10px 0; padding:15px;}
+#comments li{margin:0 0 10px 0; padding:10px;}
 #comments .avatar{float:right; margin:0 0 10px 10px; padding:3px; border:1px solid;}
 #comments address{font-weight:bold;}
 #comments time{font-size:smaller;}
@@ -389,7 +395,7 @@ table a, #comments a{background-color:inherit;}
    #info ul{margin-bottom:20px;}
 
    #mainav{}
-   #mainav ul{display:none;}
+   #mainav ul{display:block; font-size: 80%; text-align: center;}
    #mainav form{display:block;}
 
    #breadcrumb{}

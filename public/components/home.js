@@ -4,6 +4,7 @@ import imageOne from '../images/gallery/02.png';
 import imageTwo from '../images/gallery/03.png';
 import imageThree from '../images/gallery/04.png';
 
+
 class Home extends React.Component {
     render() {
         return (
@@ -12,15 +13,14 @@ class Home extends React.Component {
             <div id="billboard">
                 <article>
                     <img className ="logo" src={imageMain}/>
-                    <footer><a className="btn uppercase" href="#">Cambia el mundo</a></footer>
                 </article>
             </div>
         </div>
         <div className="wrapper row3">
             <main className="container clear"></main>
             <div>
-                <h1 className="uppercase btmspace-50">¿Qué es el veganismo?</h1>
-                <p>"Una filosofía y modo de vida que pretenden excluir, en la medida de lo posible y factible, todas las formas de explotación y crueldad hacia los animales para la alimentación, el vestido o cualquier otro propósito; Y por extensión, promueve el desarrollo y uso de alternativas libres de animales para el beneficio de los seres humanos, los animales y el medio ambiente." - The Vegan Society</p>
+                <h1 className="center uppercase btmspace-50">¿Qué es el veganismo?</h1>
+                <p className="center">"Una filosofía y modo de vida que pretenden excluir, en la medida de lo posible y factible, todas las formas de explotación y crueldad hacia los animales para la alimentación, el vestido o cualquier otro propósito; Y por extensión, promueve el desarrollo y uso de alternativas libres de animales para el beneficio de los seres humanos, los animales y el medio ambiente." - The Vegan Society</p>
                 <br></br>
             </div>
             <div id="info">
@@ -83,9 +83,9 @@ class Home extends React.Component {
         <div className="wrapper row3">
         <div className="latest">
             <ul className="nospace group">
-            <a><iframe width="425" height="245" src="https://www.youtube.com/embed/y2k4NHjAP84" frameBorder="0" allowFullScreen></iframe></a>
-            <a><iframe width="425" height="245" src="https://www.youtube.com/embed/yxgX_KTm10E" frameBorder="0" allowFullScreen></iframe></a>
-            <a><iframe width="425" height="245" src="https://www.youtube.com/embed/Jf44vLndiRM" frameBorder="0" allowFullScreen></iframe></a>
+            <a><iframe width="33%" height="245" src="https://www.youtube.com/embed/y2k4NHjAP84" frameBorder="0" allowFullScreen></iframe></a>
+            <a><iframe width="33%" height="245" src="https://www.youtube.com/embed/yxgX_KTm10E" frameBorder="0" allowFullScreen></iframe></a>
+            <a><iframe width="33%" height="245" src="https://www.youtube.com/embed/Jf44vLndiRM" frameBorder="0" allowFullScreen></iframe></a>
             </ul>
         </div>
         </div>
@@ -112,10 +112,6 @@ class Home extends React.Component {
             <p className="fl_left">Copyright &copy; AHIMSA 2017 - All Rights Reserved</p>
         </div>
         </div>
-        <a id="backtotop" href="#top"><i className="fa fa-chevron-up"></i></a>
-        <script src="layout/scripts/jquery.min.js"></script>
-        <script src="layout/scripts/jquery.backtotop.js"></script>
-        <script src="layout/scripts/jquery.mobilemenu.js"></script>
       </div>
         );
     }

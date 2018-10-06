@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import { Redirect } from 'react-router-dom';
-import '../styles/Login.css';
+import '../styles/home-style.css';
 
 class Login extends Component {
     constructor(props) {
@@ -83,23 +83,24 @@ class Login extends Component {
         }
 
         return (
-            <div className="login-form">
-                <form onSubmit={this.handleSubmit}>
-                    <h2 className="text-center">Iniciar Sesión</h2>
-                    <div className="form-group">
-                        {/*<input type="text" className="form-control" placeholder="Email" required="required" />*/}
-                        <input type="text" className="form-control" placeholder="Email" required="required" value={this.state.email} onChange={this.handleEmailChange} />
-                    </div>
-                    <div className="form-group">
-                        {/*<input type="password" className="form-control" placeholder="Contraseña" required="required" />*/}
-                        <input type="password" className="form-control" placeholder="Contraseña" required="required" value={this.state.password} onChange={this.handlePasswordChange} />
-                    </div>
-                    {this.displayError()}
-                    <div className="form-group">
-                        <button type="submit" className="btn btn-primary btn-block">Iniciar Sesión</button>
-                    </div>
-                </form>
-                <button onClick={this.handleSubFace} className="btnFace btn-primary btn-block">Login Facebook</button>
+            <div id="wrapper bgded">
+                <div className="login-page">
+                    <form onSubmit={this.handleSubmit}>
+                        <h2 className="text-center">Inicia Sesión en Ahimsa</h2>
+                        
+                            <div className="form">
+                                {/*<input type="text" className="form-control" placeholder="Email" required="required" />*/}
+                                <input type="text" className="form-control" placeholder="Email" required="required" value={this.state.email} onChange={this.handleEmailChange} />
+                                {/*<input type="password" className="form-control" placeholder="Contraseña" required="required" />*/}
+                                <input type="password" className="form-control" placeholder="Contraseña" required="required" value={this.state.password} onChange={this.handlePasswordChange} />
+                                {this.displayError()}
+                                <div id="billboard">
+                                <button type="submit" className="btn uppercase">Iniciar Sesión</button>
+                            </div>
+                            <button onClick={this.handleSubFace} className="btnFace btn-primary btn-block">Login Facebook</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         );
     }

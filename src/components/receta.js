@@ -16,8 +16,8 @@ class Receta extends React.Component {
                             </div>
                             <div>
                                 <img className="one_quarter" id="imagen" src={recipes[this.props.match.params.id].images} alt="" />
-                                <h1 className="one_quarter">Ingredientes</h1>
-                                <p className="justify one_quarter" id="ingredientes">{recipes[this.props.match.params.id].ingredients}</p>
+                                <h1 className="right">Ingredientes</h1>
+                                <p className="right" id="ingredientes">{recipes[this.props.match.params.id].ingredients}</p>
                             </div>
                         </div>
                         <div className="clear"></div>
